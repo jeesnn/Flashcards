@@ -10,9 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var backLabel: UILabel!
+    @IBOutlet weak var frontLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        frontLabel.isHidden = false
+        backLabel.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +26,9 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func didTapOnFlashcards(_ sender: Any) {
+        frontLabel.isHidden = !frontLabel.isHidden
+        backLabel.isHidden = !backLabel.isHidden
+    }
+    
 }
-
